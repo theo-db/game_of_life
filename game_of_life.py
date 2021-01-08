@@ -20,7 +20,7 @@ def main():
         return new
     
     while not done:
-        if any([event==pygame.QUIT for event in pygame.event.get()]):done = True
+        done = pygame.QUIT in [event.type for event in pygame.event.get()]
         screen.fill((0,0,0))
         for x in range(width):
             for y in range(height):
